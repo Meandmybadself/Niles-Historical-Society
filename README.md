@@ -5,30 +5,33 @@ Website for the [Niles Historical Society](https://nileshistoricalsociety.com), 
 ## Structure
 
 ```
-├── src/pages/          # Content fragments (source of truth)
-│   ├── index.html
-│   ├── stories.html
-│   ├── photos.html
-│   ├── buildings/
-│   ├── museum/
-│   ├── presidents/
-│   └── stories/
+├── src/
+│   ├── _template.html  # Shared HTML shell (header, nav, footer)
+│   └── pages/          # Content fragments (source of truth)
+│       ├── index.html
+│       ├── stories.html
+│       ├── photos.html
+│       ├── buildings/
+│       ├── museum/
+│       ├── presidents/
+│       └── stories/
 ├── docs/               # Built output — served by GitHub Pages
 │   ├── assets/
-│   │   ├── images/     # Photo galleries (from legacy Stryz/)
-│   │   ├── images2/    # Additional galleries (from legacy Stryz2/)
-│   │   ├── site/       # Site-wide images (from legacy webpx/)
-│   │   ├── thumbnails/ # Thumbnail images (from legacy wbpx2/)
+│   │   ├── images/     # Photo galleries
+│   │   ├── images2/    # Additional galleries
+│   │   ├── site/       # Site-wide images
+│   │   ├── thumbnails/ # Thumbnail images
 │   │   ├── pdfs/       # Newsletters and forms
 │   │   └── books/      # Book cover images
 │   ├── buildings/
 │   ├── museum/
 │   ├── presidents/
-│   └── stories/
-├── _template.html      # Shared HTML shell (header, nav, footer)
-├── build.js            # Assembles docs/ from _template.html + src/pages/
-├── style.css           # (in docs/) — site stylesheet
-└── site.js             # (in docs/) — lightbox and nav toggle
+│   ├── stories/
+│   ├── style.css       # Site stylesheet
+│   └── site.js         # Lightbox and nav toggle
+├── scripts/            # One-time migration tools (convert.js, restructure.js)
+├── legacy/             # Original .htm files and pre-migration asset directories
+└── build.js            # Assembles docs/ from src/_template.html + src/pages/
 ```
 
 ## Build
@@ -39,7 +42,7 @@ No dependencies. Requires Node.js.
 node build.js
 ```
 
-Reads every `.html` fragment from `src/pages/`, wraps it in `_template.html`, and writes complete pages to `docs/`. Subdirectories are mirrored; `{{BASE}}` path depth is calculated automatically.
+Reads every `.html` fragment from `src/pages/`, wraps it in `src/_template.html`, and writes complete pages to `docs/`. Subdirectories are mirrored; `{{BASE}}` path depth is calculated automatically.
 
 ### Page titles
 
