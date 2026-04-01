@@ -1,0 +1,43 @@
+name: Build Site
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'src/pages/**'
+      - '_template.html'
+      - 'style.css'
+      - 'site.js'
+      - 'build.js'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Build pages
+        run: node build.js
+
+      - name: Commit built HTML files
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A '*.html'
+          if git diff --staged --quiet; then
+            echo "No HTML changes to commit."
+          else
+            git commit -m "build: regenerate HTML from templates [skip ci]"
+            git push
+          fi
