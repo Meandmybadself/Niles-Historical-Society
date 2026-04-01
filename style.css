@@ -394,6 +394,22 @@ ul, ol {
   margin-bottom: 36px;
 }
 
+/* === Stories Category Sections === */
+.stories-category {
+  margin-bottom: 48px;
+}
+
+.stories-category-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--navy);
+  border-bottom: 2px solid var(--burgundy);
+  padding-bottom: 8px;
+  margin-bottom: 20px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
 /* === Card Grid === */
 .card-grid {
   display: grid;
