@@ -6,8 +6,8 @@ on:
     paths:
       - 'src/pages/**'
       - '_template.html'
-      - 'style.css'
-      - 'site.js'
+      - 'docs/style.css'
+      - 'docs/site.js'
       - 'build.js'
   workflow_dispatch:
 
@@ -34,7 +34,7 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add -A '*.html'
+          git add -A 'docs/'
           if git diff --staged --quiet; then
             echo "No HTML changes to commit."
           else

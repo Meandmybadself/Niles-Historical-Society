@@ -70,5 +70,5 @@ function escapeHtmlAttr(str) {
 }
 
 console.log('\nBuilding site from ' + SRC_DIR + ' ...\n');
-buildDir(SRC_DIR, '.', 0);
+buildDir(SRC_DIR, 'docs', 0);
 console.log('\n' + built + ' page(s) built' + (errors ? ', ' + errors + ' error(s)' : '') + '.\n');
