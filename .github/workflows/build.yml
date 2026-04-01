@@ -5,7 +5,7 @@ on:
     branches: [main]
     paths:
       - 'src/pages/**'
-      - '_template.html'
+      - 'src/_template.html'
       - 'docs/style.css'
       - 'docs/site.js'
       - 'build.js'

@@ -6,7 +6,7 @@ const fs   = require('fs');
 const path = require('path');
 
 const SRC_DIR  = 'src/pages';
-const TMPL     = '_template.html';
+const TMPL     = 'src/_template.html';
 
 if (!fs.existsSync(SRC_DIR)) {
   console.error(`\nERROR: "${SRC_DIR}" not found. Run convert.js first.\n`);
