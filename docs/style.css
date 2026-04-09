@@ -236,7 +236,7 @@ ul, ol {
     to bottom,
     rgba(28,43,58,0.72) 0%,
     rgba(28,43,58,0.88) 100%
-  ), url('webpx/Housex.jpg');
+  ), url('assets/site/Housex.jpg');
   background-size: cover;
   background-position: center 30%;
   padding: 88px 0 72px;
