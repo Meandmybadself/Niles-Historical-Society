@@ -519,6 +519,13 @@ ul, ol {
   margin-bottom: 0;
 }
 
+.home-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
 .home-intro-image img {
   border-radius: var(--radius);
   box-shadow: var(--shadow-lg);
@@ -966,6 +973,10 @@ ul, ol {
 @media (max-width: 768px) {
   .nav-toggle {
     display: flex;
+  }
+
+  .home-two-col {
+    grid-template-columns: 1fr;
   }
 
   .site-nav {
